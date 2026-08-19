@@ -67,13 +67,13 @@
   }
   function esc(s) {
     return String(s)
-      .replaceAll("&", "&")
-      .replaceAll("<", "<")
-      .replaceAll(">", ">")
-      .replaceAll('"', """);
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;");
   }
 
-  function buildQuiz() {
+function buildQuiz() {
     const pool = KANA.pool(setup.script, setup.rows);
     if (!pool.length) return [];
     const target = setup.length === "all" ? pool.length : setup.length;
