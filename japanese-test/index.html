@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kana Line</title>
+    <meta
+      name="description"
+      content="Practice hiragana and katakana by gojūon line. Mixed tests from the first five rows, or any line you choose."
+    />
+    <meta name="theme-color" content="#f3ead8" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:type" content="x:game" />
+    <meta property="og:title" content="Kana Line" />
+    <meta
+      property="og:description"
+      content="Drill hiragana, katakana, or a mixed test from any gojūon line."
+    />
+    <meta property="og:image" content="og.jpg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          var s = localStorage.getItem("kana-line-theme");
+          var d =
+            s === "dark" ||
+            (s !== "light" &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          document.documentElement.classList.toggle("dark", d);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#/" data-link
+          >Kana Line <small>五十音</small></a
+        >
+        <nav class="nav">
+          <a href="#/" data-link data-nav="drill">Drill</a>
+          <a href="#/chart" data-link data-nav="chart">Chart</a>
+          <a href="#/progress" data-link data-nav="progress">Progress</a>
+          <button class="icon-btn" id="theme-btn" type="button" aria-label="Toggle dark mode">☾</button>
+        </nav>
+      </div>
+    </header>
+    <div class="wrap">
+      <main id="app"></main>
+    </div>
+    <script src="kana.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
